@@ -1,173 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('2.png');
-            background-size: cover;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        #about {
-            text-align: center;
-            padding: 2rem 0;
-            margin: auto;
-            max-width: 800px;
-            background-size: cover;
-            background-attachment: fixed;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
-        #about img {
-            border-radius: 50%;
-            width: 200px;
-            margin-bottom: 1rem;
-        }
-
-        #skills {
-            padding: 2rem 0;
-            margin: auto;
-            max-width: 800px;
-            color: gray;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
-        #skill {
-            text-align: center;
-
-        }
-
-        .text {
-            color: white;
-        }
-
-        #projects {
-            text-align: center;
-            padding: 2rem 0;
-            margin: auto;
-            max-width: 800px;
-            color: gray;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
-        #resume {
-            text-align: center;
-            padding: 2rem 0;
-            margin: auto;
-            max-width: 800px;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
-        .d {
-            color: blueviolet;
-        }
-
-        #contact {
-            text-align: center;
-            padding: 2rem 0;
-            margin: auto;
-            max-width: 800px;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
-        .t {
-            color: gray;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            text-align: center;
-            padding: 1px 0;
-            position: absolute;
-            bottom: -620px;
-            width: 100%;
-        }
-
-        .link {
-            color: blueviolet;
-            cursor: pointer;
-            margin: 10px;
-        }
-    </style>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
-
 <body>
+    <div class="Calculator">
+        <h1>Calculator</h1>
+        <input type="text" id="display"/>
+        <div class="buttons">
+            <button onclick="clearDisplay()" class="btn">C</button>
+            <div class="btn-wrap">
+                <button onclick="displayValue(7)" class="btn">7</button>
+                <button onclick="displayValue(8)" class="btn">8</button>
+                <button onclick="displayValue(9)" class="btn">9</button>
+                <button onclick="displayValue('/')" class="btn">/</button>
+            </div>
 
-    <header>
-        <h1>ALEX . S</h1>
-    </header>
+            <div class="btn-wrap">
+                <button onclick="displayValue(4)" class="btn">4</button>
+                <button onclick="displayValue(5)" class="btn">5</button>
+                <button onclick="displayValue(6)" class="btn">6</button>
+                <button onclick="displayValue('*')" class="btn">*</button>
+            </div>
 
-    <section id="about">
-        <h2 class="text">About Me</h2>
-        <p class="t">I am a passionate UI/UX Designer with 1 years of experience in creating user-centered and visually
-            appealing digital experiences. I have a strong foundation in design principles, user research methodologies,
-            and front-end development technologies such as HTML, CSS, and JavaScript. I am proficient in using design
-            tools like Figma to create wireframes, mockups, and prototypes.</p>
-    </section>
+            <div class="btn-wrap">
+                <button onclick="displayValue(1)" class="btn">1</button>
+                <button onclick="displayValue(2)" class="btn">2</button>
+                <button onclick="displayValue(3)" class="btn">3</button>
+                <button onclick="displayValue('-')" class="btn">-</button>
+            </div>
 
-    <section id="skills">
-        <h2 id="skill" class="text">Skills</h2>
-        <ul>
-            <li>UI/UX Design</li>
-            <li>User Research</li>
-            <li>Information Architecture</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Figma</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2 class="text">Projects</h2>
-        <li>Foodie time</li>
-        <button class="link"
-            onclick="document.location='https://www.figma.com/proto/Izc57YFMgkrzh5YxSc1zvL/Foodie-time-project?node-id=7-331&p=f&t=8i1UCyBL2vEvDXAf-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A934'"
-            target="_blank">View prototype</button>
-        <li>Murugan Restarunt</li>
-        <button class="link"
-            onclick="document.location='https://www.figma.com/proto/gxWIgilfOmWyDLUdYTjVJ3/Murugan-Restaurant-project?node-id=1-3&starting-point-node-id=65%3A2554'"
-            target="_blank">View prototype</button>
-        <p>This section would typically showcase your past projects</p>
-    </section>
-
-    <section id="resume">
-        <h2 class="text">Resume</h2>
-        <a href="your_resume.pdf" download class="d">Download Resume</a>
-    </section>
-
-    <section id="contact">
-        <h2 class="text">Contact</h2>
-        <p class="t">Email: s.alex172737@gmai.com</p>
-    </section>
-
-
-    <footer>
-        <p>&copy; copyrights @ 2024</p>
-    </footer>
-
+            <div class="btn-wrap">
+                <button onclick="displayValue('.')" class="btn">.</button>
+                <button onclick="displayValue(0)" class="btn">0</button>
+                <button onclick="displayValue('+')" class="btn">+</button>
+                <button onclick="calculate('=')" class="btn">=</button>
+            </div>
+        </div>
+    </div>
 </body>
-
+<script src="script.js"></script>
 </html>
